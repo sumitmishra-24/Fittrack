@@ -1,9 +1,9 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
@@ -11,6 +11,7 @@ import DashboardPage from "./pages/DashboardPage";
 import WorkoutPage from "./pages/WorkoutPage";
 import DietPage from "./pages/DietPage";
 import ProgressPage from "./pages/ProgressPage";
+import AIChatPage from "./pages/AIChatPage";
 
 function Layout() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
           <Route path="workout" element={<WorkoutPage />} />
           <Route path="diet" element={<DietPage />} />
           <Route path="progress" element={<ProgressPage />} />
+          <Route path="ai-coach" element={<AIChatPage />} />
         </Route>
       </Routes>
     </Router>
