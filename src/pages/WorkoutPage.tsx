@@ -110,15 +110,18 @@ export default function WorkoutPage() {
     setSelectedGeneratedDay(0);
 
     try {
-      const response = await fetch("/api/ai/workout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL || ""}/api/ai/workout`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            data: form,
+          }),
         },
-        body: JSON.stringify({
-          data: form,
-        }),
-      });
+      );
 
       const result = await response.json();
 
